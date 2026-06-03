@@ -511,8 +511,6 @@ body {
 
 
 
-
-
 @media (max-width: 480px) {
     /* ----- Базовые настройки ----- */
     body, html, .page, .main-content, .container, .header__nav {
@@ -621,7 +619,7 @@ body {
         display: inline-block !important;
     }
 
-    /* ----- Единые отступы между секциями на всех страницах ----- */
+    /* ----- Единые отступы между секциями (скорректировано для пунктов 1,2,4,7) ----- */
     section,
     .hero,
     .features,
@@ -633,18 +631,30 @@ body {
     .team-section,
     .cart-section,
     .product-view-section {
-        margin-top: 25px !important;
-        margin-bottom: 25px !important;
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    /* Убираем огромный отступ после цитаты и перед подвалом */
-    .quote-section {
+    /* Увеличен отступ между категориями и бестселлерами (пункт 1) */
+    .categories {
+        margin-bottom: 30px !important;
+    }
+    /* Уменьшен отступ от карточек до кнопки "Смотреть весь каталог" (пункт 2) */
+    .catalog-preview__grid {
         margin-bottom: 15px !important;
+    }
+    /* Уменьшен отступ между цитатой и "Жизнь в цветах" (пункт 4) */
+    .quote-section {
+        margin-bottom: 5px !important;
+    }
+    /* Уменьшен отступ до "Жизнь в цветах" (пункт 7) */
+    .footer {
+        margin-top: 20px !important;
     }
     .footer__follow {
         margin-top: 0 !important;
-        padding-top: 15px !important;
+        padding-top: 10px !important;
     }
 
     /* ----- Заголовки секций ----- */
@@ -695,7 +705,7 @@ body {
         font-size: 10px !important;
     }
 
-    /* ----- Карточки товаров (каталог, бестселлеры) – 2 колонки, без пустот ----- */
+    /* ----- Карточки товаров (каталог, бестселлеры) – 2 колонки, исправлено выравнивание кнопки (пункты 3 и 6) ----- */
     .catalog-preview__grid,
     .catalog-grid,
     .product-recommendations__grid {
@@ -713,6 +723,7 @@ body {
         max-width: 100% !important;
         margin: 0 !important;
         box-sizing: border-box !important;
+        align-items: stretch !important;
     }
     .product-card__img-wrapper {
         height: 160px !important;
@@ -738,6 +749,10 @@ body {
         padding: 6px 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        text-align: center !important;
     }
 
     /* ----- Цитата ----- */
@@ -746,10 +761,10 @@ body {
         line-height: 1.4 !important;
     }
 
-    /* ----- ПОДВАЛ – единый для всех страниц, 2 колонки, контакты по центру ----- */
+    /* ----- ПОДВАЛ – теперь 2 столбца (пункт 5) ----- */
     .footer {
         padding: 30px 0 15px !important;
-        margin-top: 40px !important;
+        margin-top: 20px !important;
         margin-bottom: 0 !important;
     }
     .footer,
@@ -758,24 +773,25 @@ body {
         box-sizing: border-box !important;
     }
     .footer__grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 24px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        text-align: left !important;
         width: 100% !important;
     }
     .footer__col {
         width: 100% !important;
-        max-width: 280px !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin: 0 auto !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        margin: 0 !important;
+        max-width: none !important;
     }
     .footer__follow {
+        grid-column: span 2 !important;
         text-align: center !important;
+        margin-bottom: 10px !important;
     }
     .footer__follow h2 {
         font-size: 20px !important;
@@ -796,11 +812,11 @@ body {
         list-style: none !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
+        align-items: flex-start !important;
     }
     .footer__col li {
         margin-bottom: 6px !important;
-        text-align: center !important;
+        text-align: left !important;
     }
     .footer__col a,
     .footer_icons span,
@@ -810,14 +826,14 @@ body {
     .footer_icons {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         gap: 8px !important;
         width: 100% !important;
     }
     .footer_icons div {
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;
         gap: 6px !important;
         width: 100% !important;
     }
@@ -845,10 +861,12 @@ body {
         padding: 8px 14px !important;
     }
     .footer__insta-grid {
+        grid-column: span 2 !important;
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 6px !important;
         width: 100% !important;
+        margin-top: 10px !important;
     }
     .footer__insta-grid img {
         height: 60px !important;
@@ -856,6 +874,7 @@ body {
         object-fit: cover !important;
     }
     .footer__bottom {
+        grid-column: span 2 !important;
         text-align: center !important;
         padding-top: 15px !important;
         margin-top: 10px !important;
@@ -863,7 +882,7 @@ body {
         width: 100% !important;
     }
 
-    /* ----- Страница "О нас": ценности и команда (2 колонки) ----- */
+    /* ----- Страница "О нас": ценности и команда (2 колонки) плюс исправления пунктов 8,9,10 ----- */
     .about-story {
         display: flex !important;
         flex-direction: column !important;
@@ -875,12 +894,15 @@ body {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         width: 100% !important;
+        margin-top: 20px !important;  /* сдвинули ниже (пункт 8) */
+        justify-items: center !important;
     }
     .value-card,
     .team-card {
         padding: 10px 6px !important;
         text-align: center !important;
         box-sizing: border-box !important;
+        width: 100% !important;
     }
     .value-card i {
         font-size: 24px !important;
@@ -895,17 +917,34 @@ body {
         font-size: 10px !important;
     }
     .team-card__img {
-        width: 80px !important;
-        height: 80px !important;
+        width: 70px !important;      /* уменьшили фото (пункт 10) */
+        height: 70px !important;
         margin: 0 auto 6px !important;
         border-radius: 50% !important;
         object-fit: cover !important;
     }
+    /* Выравнивание команды по центру (пункт 9) */
+    .team-grid {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    /* Статистика (чёрная карточка) – сделали меньше и текст меньше (пункт 10) */
     .stats-grid {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: space-around !important;
-        gap: 10px !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    .stat-item {
+        flex: 0 0 auto !important;
+        width: 100px !important;
+        text-align: center !important;
+    }
+    .stat-item span {
+        font-size: 18px !important;
+    }
+    .stat-item p {
+        font-size: 8px !important;
     }
 
     /* ----- Корзина ----- */
