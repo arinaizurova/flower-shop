@@ -511,6 +511,7 @@ body {
 
 
 
+
 @media (max-width: 480px) {
     /* ----- Базовые настройки ----- */
     body, html, .page, .main-content, .container, .header__nav {
@@ -619,7 +620,7 @@ body {
         display: inline-block !important;
     }
 
-    /* ----- Единые отступы между секциями (скорректировано для пунктов 1,2,4,7) ----- */
+    /* ----- Единые отступы между секциями ----- */
     section,
     .hero,
     .features,
@@ -636,19 +637,19 @@ body {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
-    /* Увеличен отступ между категориями и бестселлерами (пункт 1) */
+    /* Увеличен отступ между категориями и бестселлерами */
     .categories {
         margin-bottom: 30px !important;
     }
-    /* Уменьшен отступ от карточек до кнопки "Смотреть весь каталог" (пункт 2) */
+    /* Уменьшен отступ от карточек до кнопки "Смотреть весь каталог" */
     .catalog-preview__grid {
         margin-bottom: 15px !important;
     }
-    /* Уменьшен отступ между цитатой и "Жизнь в цветах" (пункт 4) */
+    /* Уменьшен отступ между цитатой и "Жизнь в цветах" */
     .quote-section {
         margin-bottom: 5px !important;
     }
-    /* Уменьшен отступ до "Жизнь в цветах" (пункт 7) */
+    /* Уменьшен отступ до "Жизнь в цветах" */
     .footer {
         margin-top: 20px !important;
     }
@@ -705,7 +706,7 @@ body {
         font-size: 10px !important;
     }
 
-    /* ----- Карточки товаров (каталог, бестселлеры) – 2 колонки, исправлено выравнивание кнопки (пункты 3 и 6) ----- */
+    /* ----- Карточки товаров (2 колонки) + фикс кнопки ----- */
     .catalog-preview__grid,
     .catalog-grid,
     .product-recommendations__grid {
@@ -746,6 +747,7 @@ body {
     }
     .product-card__btn {
         font-size: 11px !important;
+        padding: 6px 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
         margin-left: auto !important;
@@ -760,7 +762,7 @@ body {
         line-height: 1.4 !important;
     }
 
-    /* ----- ПОДВАЛ – теперь 2 столбца (пункт 5) ----- */
+    /* ----- ПОДВАЛ – 2 столбца ----- */
     .footer {
         padding: 30px 0 15px !important;
         margin-top: 20px !important;
@@ -795,13 +797,13 @@ body {
     .footer__follow h2 {
         font-size: 20px !important;
         font-family: 'Playfair Display', serif !important;
-        font-weight: 300 !important;
+        font-weight: 400 !important;
         letter-spacing: 1px !important;
         margin-bottom: 12px !important;
     }
     .footer__col h4 {
         font-size: 13px !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         margin-bottom: 8px !important;
         text-transform: uppercase !important;
     }
@@ -868,7 +870,7 @@ body {
         margin-top: 10px !important;
     }
     .footer__insta-grid img {
-        height: 80px !important;
+        height: 60px !important;
         width: 100% !important;
         object-fit: cover !important;
     }
@@ -881,7 +883,7 @@ body {
         width: 100% !important;
     }
 
-    /* ----- Страница "О нас": ценности и команда (2 колонки) плюс исправления пунктов 8,9,10 ----- */
+    /* ----- Страница "О нас" ----- */
     .about-story {
         display: flex !important;
         flex-direction: column !important;
@@ -893,7 +895,7 @@ body {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         width: 100% !important;
-        margin-top: 20px !important;  /* сдвинули ниже (пункт 8) */
+        margin-top: 20px !important;
         justify-items: center !important;
     }
     .value-card,
@@ -916,18 +918,16 @@ body {
         font-size: 10px !important;
     }
     .team-card__img {
-        width: 70px !important;      /* уменьшили фото (пункт 10) */
+        width: 70px !important;
         height: 70px !important;
         margin: 0 auto 6px !important;
         border-radius: 50% !important;
         object-fit: cover !important;
     }
-    /* Выравнивание команды по центру (пункт 9) */
     .team-grid {
         justify-content: center !important;
         align-items: center !important;
     }
-    /* Статистика (чёрная карточка) – сделали меньше и текст меньше (пункт 10) */
     .stats-grid {
         display: flex !important;
         flex-wrap: wrap !important;
