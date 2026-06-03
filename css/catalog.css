@@ -247,20 +247,16 @@
         gap: 12px !important;
     }
     .product-card__img-wrapper {
-        height: 160px !important;
+        height: 140px !important;
     }
     .product-card__title {
-        font-size: 12px !important;
+        font-size: 11px !important;
     }
     .product-card__price {
-        font-size: 13px !important;
+        font-size: 12px !important;
     }
     .product-card__btn {
         font-size: 10px !important;
-        padding: 6px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: block !important;
-        text-align: center !important;
+        padding: 5px 0 !important;
     }
 }

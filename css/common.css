@@ -402,7 +402,7 @@ body {
         text-align: center;
     }
     .footer_icons {
-        justify-content: center;
+        justify-content: left;
     }
     .footer__subscribe {
         max-width: 300px;
@@ -606,6 +606,7 @@ body {
         grid-template-columns: 1fr 1fr !important;
         gap: 10px !important;
     }
+
     .product-card__img-wrapper {
         height: 140px !important;
     }
@@ -619,6 +620,7 @@ body {
         font-size: 10px !important;
         padding: 5px 0 !important;
     }
+
     .quote-text {
         font-size: 13px !important;
     }
@@ -633,6 +635,7 @@ body {
     }
     .footer__col {
         align-items: flex-start !important;
+        text-align: left !important;
     }
     .footer__col ul {
         align-items: flex-start !important;
@@ -645,7 +648,7 @@ body {
         gap: 5px !important;
     }
     .footer__insta-grid img {
-        height: 55px !important;
+        height: 65px !important;
     }
     .footer__bottom {
         font-size: 9px !important;
