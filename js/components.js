@@ -108,15 +108,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // поиск товара - с использованием класса active
+    // ========== ПОИСК ТОВАРА С ПОДСКАЗКАМИ ПОВЕРХ ВСЕГО ЭКРАНА ==========
     const searchInput = document.getElementById('headerSearchInput');
-    const suggestionsBox = document.getElementById('headerSearchSuggestions');
+    
+    // Создаем отдельный контейнер для подсказок в body (чтобы не зависеть от хедера)
+    let globalSuggestions = document.getElementById('globalSearchSuggestions');
+    if (!globalSuggestions) {
+        globalSuggestions = document.createElement('div');
+        globalSuggestions.id = 'globalSearchSuggestions';
+        globalSuggestions.className = 'global-search-suggestions';
+        document.body.appendChild(globalSuggestions);
+    }
 
-    if (searchInput && suggestionsBox && typeof products !== 'undefined') {
+    if (searchInput && typeof products !== 'undefined') {
         searchInput.addEventListener('input', (e) => {
             const value = e.target.value.toLowerCase().trim();
             if (value.length < 2) {
-                suggestionsBox.classList.remove('active');
+                globalSuggestions.style.display = 'none';
                 return;
             }
             const matches = products.filter(p => 
@@ -124,8 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 (p.category && p.category.toLowerCase().includes(value))
             );
             if (matches.length > 0) {
-                suggestionsBox.classList.add('active');
-                suggestionsBox.innerHTML = matches.map(p => {
+                globalSuggestions.style.display = 'block';
+                globalSuggestions.innerHTML = matches.map(p => {
                     const productId = products.findIndex(item => item.name === p.name);
                     return `
                         <a href="product.html?id=${productId}" class="search-suggestion-item">
@@ -137,14 +145,40 @@ document.addEventListener("DOMContentLoaded", () => {
                         </a>
                     `;
                 }).join('');
+                
+                // Позиционируем подсказки относительно поля ввода
+                const rect = searchInput.getBoundingClientRect();
+                globalSuggestions.style.position = 'fixed';
+                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
+                globalSuggestions.style.left = rect.left + 'px';
+                globalSuggestions.style.width = rect.width + 'px';
+                globalSuggestions.style.minWidth = '260px';
             } else {
-                suggestionsBox.classList.remove('active');
+                globalSuggestions.style.display = 'none';
             }
         });
 
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-                suggestionsBox.classList.remove('active');
+            if (!searchInput.contains(e.target) && !globalSuggestions.contains(e.target)) {
+                globalSuggestions.style.display = 'none';
+            }
+        });
+        
+        // Обновляем позицию при скролле
+        window.addEventListener('scroll', () => {
+            if (globalSuggestions.style.display === 'block') {
+                const rect = searchInput.getBoundingClientRect();
+                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
+                globalSuggestions.style.left = rect.left + 'px';
+            }
+        });
+        
+        // Обновляем позицию при изменении размера окна
+        window.addEventListener('resize', () => {
+            if (globalSuggestions.style.display === 'block') {
+                const rect = searchInput.getBoundingClientRect();
+                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
+                globalSuggestions.style.left = rect.left + 'px';
             }
         });
     }
