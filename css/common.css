@@ -505,6 +505,7 @@ body {
     }
 }
 
+
 /* Адаптив под телефон */
 @media (max-width: 480px) {
     body, html, .page, .main-content, .container, .header__nav {
@@ -552,7 +553,7 @@ body {
 
     /* Подсказки поиска */
     .header__search-suggestions {
-        display: block !important;
+        display: none !important;
         width: 260px !important;
         right: 0 !important;
         left: auto !important;
@@ -564,6 +565,10 @@ body {
         z-index: 1002 !important;
         max-height: 300px !important;
         overflow-y: auto !important;
+        position: absolute !important;
+    }
+    .header__search-suggestions.active {
+        display: block !important;
     }
     .search-suggestion-item {
         display: flex !important;

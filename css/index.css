@@ -313,13 +313,12 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
         font-size: 48px;
     }
 }
-
 /* Адаптив под телефон */
 @media (max-width: 480px) {
     /* Баннер */
     .hero {
         height: 40vh !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 10px !important;
     }
     .hero__title {
         font-size: 28px !important;
@@ -336,8 +335,8 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     .features-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
-        padding: 15px 0 !important;
-        margin-bottom: 5px !important;
+        padding: 10px 0 !important;
+        margin-bottom: 10px !important;
     }
     .features__icon {
         font-size: 22px !important;
@@ -362,7 +361,7 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     
     /* Категории */
     .categories {
-        margin-top: 5px !important;
+        margin-top: 10px !important;
         margin-bottom: 10px !important;
         padding: 0 !important;
     }
@@ -379,8 +378,8 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     
     /* Бестселлеры */
     .catalog-preview {
-        margin-top: 5px !important;
-        margin-bottom: 15px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
         padding: 0 !important;
     }
     .catalog-preview__grid {
@@ -410,9 +409,9 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     
     /* Цитата */
     .quote-section {
-        margin-top: 5px !important;
-        margin-bottom: 15px !important;
-        padding: 15px 0 !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        padding: 10px 0 !important;
     }
     .quote-text {
         font-size: 14px !important;
