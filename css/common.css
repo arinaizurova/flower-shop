@@ -746,7 +746,6 @@ body {
     }
     .product-card__btn {
         font-size: 11px !important;
-        padding: 6px 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
         margin-left: auto !important;
@@ -796,13 +795,13 @@ body {
     .footer__follow h2 {
         font-size: 20px !important;
         font-family: 'Playfair Display', serif !important;
-        font-weight: 400 !important;
+        font-weight: 300 !important;
         letter-spacing: 1px !important;
         margin-bottom: 12px !important;
     }
     .footer__col h4 {
         font-size: 13px !important;
-        font-weight: 600 !important;
+        font-weight: 500 !important;
         margin-bottom: 8px !important;
         text-transform: uppercase !important;
     }
@@ -869,7 +868,7 @@ body {
         margin-top: 10px !important;
     }
     .footer__insta-grid img {
-        height: 60px !important;
+        height: 80px !important;
         width: 100% !important;
         object-fit: cover !important;
     }
