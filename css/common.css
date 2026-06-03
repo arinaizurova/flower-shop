@@ -511,25 +511,95 @@ body {
 
 
 
-
+/* ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ширина до 576px) */
 @media (max-width: 576px) {
-    .container {
-        padding: 0 12px;
-    }
-    body {
-        font-size: 13px;
-    }
+    /* Шапка – только уменьшение шрифтов, без изменения структуры */
     .header__logo {
         font-size: 16px;
     }
     .header__menu a {
-        font-size: 11px;
-        gap: 10px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
     }
     .header__search-input {
-        width: 90px;
+        width: 80px;
         font-size: 10px;
     }
+    .header__search-btn img,
+    .header__cart-icon img {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Сетки: карточки товаров – 2 колонки */
+    .catalog-preview__grid,
+    .catalog-grid,
+    .product-recommendations__grid,
+    .categories__grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* Преимущества – 3 колонки (с мелким текстом) */
+    .features-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+        padding: 20px 0 !important;
+    }
+    .features__icon {
+        font-size: 22px !important;
+        margin-bottom: 5px !important;
+    }
+    .features__title {
+        font-size: 10px !important;
+    }
+    .features__description {
+        font-size: 8px !important;
+    }
+
+    /* Подвал – 2 колонки */
+    .footer__grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+    .footer_icons {
+        justify-content: flex-start !important;
+    }
+    .footer__insta-grid img {
+        height: 70px !important;
+    }
+
+    /* Ценности и команда для страницы "О нас" – 3 колонки */
+    .values-grid,
+    .team-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+    }
+    .value-card,
+    .team-card {
+        padding: 10px !important;
+    }
+    .value-card i {
+        font-size: 24px !important;
+    }
+    .value-card h3,
+    .team-card h3 {
+        font-size: 12px !important;
+    }
+    .value-card p,
+    .team-card p {
+        font-size: 9px !important;
+    }
+    .team-card__img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    /* Остальные элементы – только размеры, без изменения раскладки */
     .hero {
         height: 50vh;
     }
@@ -543,39 +613,6 @@ body {
     .section-header__title {
         font-size: 22px;
     }
-    .section-header__subtitle {
-        font-size: 10px;
-    }
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
-    .features__icon {
-        font-size: 24px;
-    }
-    .features__title {
-        font-size: 11px;
-    }
-    .features__description {
-        font-size: 9px;
-    }
-    .categories__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    .categories__card {
-        padding: 15px 10px;
-    }
-    .categories__icon i {
-        font-size: 28px;
-    }
-    .categories__title {
-        font-size: 14px;
-    }
-    .catalog-preview__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
     .product-card__img-wrapper {
         height: 160px;
     }
@@ -585,18 +622,7 @@ body {
     .product-card__price {
         font-size: 13px;
     }
-    .product-card__btn {
-        font-size: 9px;
-        padding: 5px;
-    }
     .quote-text {
         font-size: 14px;
-    }
-    .footer__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .footer__insta-grid img {
-        height: 70px;
     }
 }
