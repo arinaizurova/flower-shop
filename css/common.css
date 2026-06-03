@@ -551,13 +551,13 @@ body {
         gap: 6px !important;
     }
 
-    /* Подсказки поиска */
+        /* Подсказки поиска */
     .header__search-suggestions {
-        display: none !important;
-        width: 260px !important;
+        position: absolute !important;
+        top: 35px !important;
         right: 0 !important;
         left: auto !important;
-        top: 35px !important;
+        width: 260px !important;
         background: white !important;
         border: 1px solid var(--light-pink) !important;
         border-radius: 12px !important;
@@ -565,10 +565,6 @@ body {
         z-index: 1002 !important;
         max-height: 300px !important;
         overflow-y: auto !important;
-        position: absolute !important;
-    }
-    .header__search-suggestions.active {
-        display: block !important;
     }
     .search-suggestion-item {
         display: flex !important;
@@ -593,6 +589,7 @@ body {
         font-size: 11px !important;
         color: var(--accent-pink) !important;
     }
+    
 
     /* Подвал */
     .footer {

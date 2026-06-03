@@ -383,13 +383,22 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
         padding: 0 !important;
     }
     .catalog-preview__grid {
+        display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 12px !important;
         margin-bottom: 10px !important;
+        width: 100% !important;
     }
     
     /* Карточки товаров */
+    .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
     .product-card__img-wrapper {
+        width: 100% !important;
         height: 160px !important;
     }
     .product-card__title {
