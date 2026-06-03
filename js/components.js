@@ -83,7 +83,6 @@ const footerHTML = `
     </div>
 `;
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const headerElement = document.querySelector('header');
     const footerElement = document.querySelector('footer');
@@ -109,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // поиск товара
+    // поиск товара - с использованием класса active
     const searchInput = document.getElementById('headerSearchInput');
     const suggestionsBox = document.getElementById('headerSearchSuggestions');
 
@@ -117,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         searchInput.addEventListener('input', (e) => {
             const value = e.target.value.toLowerCase().trim();
             if (value.length < 2) {
-                suggestionsBox.style.display = 'none';
+                suggestionsBox.classList.remove('active');
                 return;
             }
             const matches = products.filter(p => 
@@ -125,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 (p.category && p.category.toLowerCase().includes(value))
             );
             if (matches.length > 0) {
-                suggestionsBox.style.display = 'block';
+                suggestionsBox.classList.add('active');
                 suggestionsBox.innerHTML = matches.map(p => {
                     const productId = products.findIndex(item => item.name === p.name);
                     return `
@@ -139,13 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 }).join('');
             } else {
-                suggestionsBox.style.display = 'none';
+                suggestionsBox.classList.remove('active');
             }
         });
 
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-                suggestionsBox.style.display = 'none';
+                suggestionsBox.classList.remove('active');
             }
         });
     }
