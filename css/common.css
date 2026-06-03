@@ -506,129 +506,63 @@ body {
 }
 
 
-/* Вся адаптивность для телефона */
+
 @media (max-width: 576px) {
-    /* Общие */
     .container {
-        padding: 0 12px;
+        padding: 0 16px;
     }
     
     .btn {
-        padding: 8px 18px;
-        font-size: 11px;
+        padding: 10px 20px;
+        font-size: 13px;
     }
     
-    /* Шапка - фикс поиска */
     .header__icons {
-        gap: 8px;
+        gap: 12px;
+        align-items: center;
     }
     .header__search-wrapper {
-        max-width: 130px;
+        flex: 1;
+        max-width: 180px;
+        position: relative;
     }
     .header__search-input {
-        width: 60px;
-        font-size: 10px;
-    }
-    .header__search-input:focus {
-        width: 80px;
+        width: 100% !important;
+        font-size: 14px;
+        padding: 6px 30px 6px 10px;
     }
     .header__search-btn img,
     .header__cart-icon img {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
     
-    /* Подвал */
-    .footer__follow h2 {
-        font-size: 22px;
+    .catalog__grid, 
+    .products__grid { 
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
     }
-    .footer__insta-grid {
-        gap: 8px;
-    }
-    .footer__insta-grid img {
-        height: 80px;
-    }
-    .footer__main {
-        padding: 30px 0 20px;
-    }
-    .footer__grid {
-        gap: 25px;
-    }
-    .footer__col {
-        min-width: auto;
-    }
-    .footer__col h4 {
-        font-size: 13px;
-    }
-    .footer_icons img {
-        width: 18px;
-        height: 18px;
-    }
-    .footer_icons span {
-        font-size: 12px;
-    }
-    .footer__col li, .footer__col a {
-        font-size: 12px;
-    }
-    .footer__subscribe input {
-        padding: 6px 10px;
-        font-size: 12px;
-    }
-    .footer__subscribe button {
-        padding: 6px 12px;
-        font-size: 11px;
-    }
-    .footer__bottom {
-        font-size: 10px;
-        margin-top: 20px;
-        padding-top: 12px;
-    }
-    
-    /* Уведомления */
-    .notification-container {
-        max-width: 260px;
-        right: 10px;
-        top: 10px;
-    }
-    .notification {
-        padding: 10px 12px;
-        font-size: 12px;
-    }
-    .notification-cart-link {
-        font-size: 10px;
-    }
-    
-    /* Заголовки страниц */
-    .catalog-header__title,
-    .cart-page__title,
-    .orders-page__title,
-    .about-hero__title,
-    .product-view__title {
-        font-size: 28px !important;
-    }
-    
-    /* Карточки товаров общие */
     .product-card__img-wrapper {
-        height: 200px;
+        height: 160px;
     }
     .product-card__title {
         font-size: 13px;
-        margin: 10px 10px 4px;
+        margin: 8px 8px 4px;
+        line-height: 1.3;
     }
     .product-card__price {
         font-size: 14px;
-        margin: 0 10px 10px;
+        margin: 0 8px 8px;
+        font-weight: bold;
     }
     .product-card__btn {
-        margin: 0 10px 12px 10px;
-        padding: 7px 0;
-        font-size: 10px;
-        width: calc(100% - 20px);
+        margin: 0 8px 10px 8px;
+        padding: 8px 0;
+        font-size: 11px;
+        width: calc(100% - 16px);
     }
-}
 
-/* Адаптив для каталога на телефонах */
-@media (max-width: 576px) {
     .filters {
         padding: 12px;
     }
@@ -645,21 +579,66 @@ body {
         font-size: 12px;
     }
     .filters__actions {
+        display: flex;
         flex-direction: row;
         gap: 8px;
+        margin-top: 12px;
     }
     .filters__btn-apply,
     .filters__btn-reset {
         flex: 1;
-        padding: 8px;
-        font-size: 11px;
+        padding: 10px;
+        font-size: 12px;
     }
-}
+    
+    .product-view {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .product-view__main-img {
+        max-height: 280px;
+        width: 100%;
+        object-fit: contain;
+    }
+    .product-view__price {
+        font-size: 22px;
+    }
+    .product-view__description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .product-options__btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    .product-purchase__add {
+        padding: 12px;
+        font-size: 14px;
+        width: 100%;
+    }
+    .recommendation-card__img {
+        height: 150px;
+    }
 
-/* Адаптив для корзины на телефонах */
-@media (max-width: 576px) {
+    .cart-page__wrapper,
+    .cart__container { 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .cart-item {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    .cart-item__img {
+        width: 60px;
+        height: 80px;
+        object-fit: cover;
+    }
     .cart-summary {
-        padding: 15px;
+        padding: 16px;
     }
     .cart-total {
         font-size: 18px;
@@ -668,92 +647,142 @@ body {
         font-size: 16px;
     }
     .form-group label {
-        font-size: 12px;
+        font-size: 13px;
     }
     .form-group input,
     .form-group textarea {
-        padding: 8px 10px;
-        font-size: 13px;
+        padding: 10px;
+        font-size: 14px;
     }
     .btn-order-submit {
-        padding: 10px;
-        font-size: 12px;
-    }
-    .cart-item__img {
-        width: 60px;
-        height: 80px;
-    }
-}
-
-/* Адаптив для карточки товара на телефонах */
-@media (max-width: 576px) {
-    .product-view {
-        gap: 20px;
-    }
-    .product-view__main-img {
-        max-height: 300px;
-    }
-    .product-view__price {
-        font-size: 22px;
-    }
-    .product-view__description {
-        font-size: 13px;
-    }
-    .product-options__btn {
-        padding: 5px 12px;
-        font-size: 10px;
-    }
-    .product-purchase__add {
-        padding: 10px;
-        font-size: 12px;
-    }
-    .recommendation-card__img {
-        height: 180px;
-    }
-}
-
-/* Адаптив для заказов на телефонах */
-@media (max-width: 576px) {
-    .order-card {
         padding: 12px;
+        font-size: 14px;
+    }
+    
+    .order-card {
+        padding: 16px;
     }
     .order-id {
-        font-size: 13px;
+        font-size: 14px;
     }
     .order-items li {
-        font-size: 12px;
+        font-size: 13px;
     }
     .order-customer {
-        font-size: 11px;
-        padding: 8px 10px;
+        font-size: 12px;
+        padding: 10px;
     }
     .order-total {
-        font-size: 15px;
+        font-size: 16px;
     }
-}
 
-/* Адаптив для страницы "О нас" на телефонах */
-@media (max-width: 576px) {
     .about-hero {
-        padding: 40px 0;
+        padding: 30px 0;
     }
     .about-story__content h2 {
         font-size: 22px;
     }
     .about-story__content p {
-        font-size: 13px;
+        font-size: 14px;
     }
     .value-card {
-        padding: 15px;
+        padding: 16px;
     }
     .value-card i {
         font-size: 32px;
     }
     .team-card__img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     .stat-item span {
         font-size: 26px;
+    }
+
+    .catalog-header__title,
+    .cart-page__title,
+    .orders-page__title,
+    .about-hero__title,
+    .product-view__title {
+        font-size: 24px !important;
+        line-height: 1.2;
+    }
+
+    .notification-container {
+        width: calc(100% - 20px);
+        max-width: 320px;
+        right: 10px;
+        top: 10px;
+    }
+    .notification {
+        padding: 12px;
+        font-size: 13px;
+    }
+    .notification-cart-link {
+        font-size: 11px;
+    }
+
+    .footer__main {
+        padding: 30px 0 20px;
+    }
+    .footer__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .footer__col {
+        min-width: 100%;
+    }
+    .footer__col h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .footer__col li, 
+    .footer__col a {
+        font-size: 13px;
+    }
+    .footer_icons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .footer_icons img {
+        width: 20px;
+        height: 20px;
+    }
+    .footer_icons span {
+        font-size: 13px;
+    }
+    .footer__follow h2 {
+        font-size: 20px;
+    }
+    .footer__insta-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .footer__insta-grid img {
+        height: 75px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .footer__subscribe form {
+        display: flex;
+        width: 100%;
+    }
+    .footer__subscribe input {
+        flex: 1;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .footer__subscribe button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    .footer__bottom {
+        font-size: 11px;
+        margin-top: 24px;
+        padding-top: 16px;
+        text-align: center;
     }
 }
