@@ -304,7 +304,6 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
 
 
 
-/* АДАПТИВ ДЛЯ ПЛАНШЕТА (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .categories__grid, .catalog-preview__grid {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -315,7 +314,8 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     }
 }
 
-/* АДАПТИВ ДЛЯ ТЕЛЕФОНА (до 480px) */
+
+/* Адаптив под телефон */
 @media (max-width: 480px) {
     .hero {
         height: 40vh !important;
@@ -333,6 +333,7 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     .features-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
+        padding: 20px 0 !important;
     }
     .features__icon {
         font-size: 22px !important;
@@ -362,8 +363,8 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     .categories__icon i {
         font-size: 26px !important;
     }
-    .categories__title {
-        font-size: 13px !important;
+    .catalog-preview {
+        margin-top: 10px !important;
     }
     .catalog-preview__grid {
         grid-template-columns: 1fr 1fr !important;
@@ -388,6 +389,7 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
         text-align: center !important;
     }
     .quote-section {
+        margin-top: 10px !important;
         margin-bottom: 5px !important;
     }
     .quote-text {

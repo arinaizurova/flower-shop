@@ -506,11 +506,7 @@ body {
 }
 
 
-
-
-
-
-
+/* Адаптив под телефон */
 @media (max-width: 480px) {
     body, html, .page, .main-content, .container, .header__nav {
         overflow-x: hidden !important;
@@ -524,6 +520,7 @@ body {
         font-size: 13px !important;
     }
 
+    /* Шапка*/
     .header__nav {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -553,79 +550,24 @@ body {
         font-size: 10px !important;
         gap: 6px !important;
     }
-    .hero {
-        height: 40vh !important;
+
+    /* Подсказки поиска */
+    .header__search-suggestions {
+        width: 260px !important;
+        right: 0 !important;
+        left: auto !important;
+        top: 35px !important;
     }
-    .hero__title {
-        font-size: 28px !important;
-    }
-    .hero__subtitle,
-    .hero__promo {
-        font-size: 12px !important;
-    }
-    .btn {
-        padding: 6px 14px !important;
-        font-size: 11px !important;
-    }
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        padding: 20px 0 !important;
-    }
-    .features__icon {
-        font-size: 22px !important;
-    }
-    .features__title {
-        font-size: 11px !important;
-    }
-    .features__description {
-        font-size: 9px !important;
-    }
-    .section-header__title {
-        font-size: 20px !important;
-    }
-    .section-header__subtitle {
-        font-size: 10px !important;
-    }
-    .categories__grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-    }
-    .categories__card {
-        padding: 10px 6px !important;
-    }
-    .categories__icon i {
-        font-size: 26px !important;
-    }
-    .categories__title {
-        font-size: 12px !important;
-    }
-    .catalog-preview__grid,
-    .catalog-grid,
-    .product-recommendations__grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
+    .search-suggestion-img {
+        width: 35px !important;
+        height: 35px !important;
     }
 
-    .product-card__img-wrapper {
-        height: 140px !important;
-    }
-    .product-card__title {
-        font-size: 11px !important;
-    }
-    .product-card__price {
-        font-size: 12px !important;
-    }
-    .product-card__btn {
-        font-size: 10px !important;
-        padding: 5px 0 !important;
-    }
 
-    .quote-text {
-        font-size: 13px !important;
-    }
+    /* Подвал */
     .footer {
         margin-top: 20px !important;
+        padding: 30px 0 15px !important;
     }
     .footer__grid {
         display: grid !important;
@@ -644,47 +586,27 @@ body {
         align-items: flex-start !important;
     }
     .footer__insta-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 5px !important;
+        grid-column: span 2 !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 6px !important;
     }
     .footer__insta-grid img {
-        height: 65px !important;
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    .footer__follow {
+        grid-column: span 2 !important;
+        text-align: center !important;
+    }
+    .footer__follow h2 {
+        font-size: 20px !important;
     }
     .footer__bottom {
+        grid-column: span 2 !important;
         font-size: 9px !important;
+        text-align: center !important;
     }
-    .values-grid,
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-    }
-    .team-card__img {
-        width: 70px !important;
-        height: 70px !important;
-    }
-    .stat-item span {
-        font-size: 18px !important;
-    }
-    .stat-item p {
-        font-size: 9px !important;
-    }
-    .cart-layout {
-        flex-direction: column !important;
-    }
-    .cart-item {
-        flex-wrap: wrap !important;
-    }
-    .cart-item__img {
-        width: 60px !important;
-        height: 80px !important;
-    }
-    .product-view {
-        flex-direction: column !important;
-    }
-    .product-view__title {
-        font-size: 22px !important;
-    }
-    .product-view__price {
-        font-size: 18px !important;
-    }
+
 }

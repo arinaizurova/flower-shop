@@ -139,8 +139,7 @@
     margin-top: 20px;
 }
 
-/* Адаптивность */
-/* АДАПТИВ ДЛЯ ПЛАНШЕТА (768px - 1024px) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .cart-layout {
         gap: 25px;
@@ -150,7 +149,7 @@
     }
 }
 
-/* АДАПТИВ ДЛЯ ТЕЛЕФОНА (до 480px) */
+/* Адаптив под телефон */
 @media (max-width: 480px) {
     .cart-page {
         padding: 30px 0;
@@ -176,7 +175,10 @@
         font-size: 14px !important;
     }
     .cart-summary {
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 15px !important;
+        box-sizing: border-box !important;
     }
     .cart-total {
         font-size: 18px !important;
@@ -184,12 +186,17 @@
     .order-form h3 {
         font-size: 16px !important;
     }
-    .form-group input, .form-group textarea {
+    .form-group input, 
+    .form-group textarea {
         font-size: 12px !important;
         padding: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     .btn-order-submit {
         padding: 10px !important;
         font-size: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }

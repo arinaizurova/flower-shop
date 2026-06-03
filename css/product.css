@@ -207,7 +207,7 @@
     font-size: 16px;
 }
 
-/* АДАПТИВ ДЛЯ ПЛАНШЕТА (768px - 1024px) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .product-view {
         gap: 30px;
@@ -220,7 +220,7 @@
     }
 }
 
-/* АДАПТИВ ДЛЯ ТЕЛЕФОНА (до 480px) */
+/* Адаптив под телефон */
 @media (max-width: 480px) {
     .product-page {
         padding: 20px 0 40px;
@@ -253,13 +253,23 @@
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
+    .recommendation-card {
+        border: 1px solid var(--light-pink);
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+    }
     .recommendation-card__img {
         height: 160px !important;
+        width: 100% !important;
+        object-fit: cover !important;
     }
     .recommendation-card__title {
         font-size: 12px !important;
+        margin: 10px 10px 4px !important;
     }
     .recommendation-card__price {
         font-size: 13px !important;
+        margin: 0 10px 12px !important;
     }
 }
