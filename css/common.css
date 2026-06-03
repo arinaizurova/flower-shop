@@ -551,46 +551,48 @@ body {
         gap: 6px !important;
     }
 
-        /* Подсказки поиска */
+        /* Подсказки поиска - поверх всего */
+    .header__search-wrapper {
+        position: static !important;
+    }
     .header__search-suggestions {
-        position: absolute !important;
-        top: 35px !important;
-        right: 0 !important;
+        position: fixed !important;
+        top: 60px !important;
+        right: 12px !important;
         left: auto !important;
-        width: 260px !important;
+        width: 280px !important;
         background: white !important;
         border: 1px solid var(--light-pink) !important;
         border-radius: 12px !important;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
-        z-index: 1002 !important;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+        z-index: 9999 !important;
         max-height: 300px !important;
         overflow-y: auto !important;
     }
     .search-suggestion-item {
         display: flex !important;
         align-items: center !important;
-        padding: 8px 10px !important;
+        padding: 10px !important;
         text-decoration: none !important;
         border-bottom: 1px solid #f0f0f0 !important;
     }
     .search-suggestion-img {
-        width: 35px !important;
-        height: 35px !important;
+        width: 40px !important;
+        height: 40px !important;
         object-fit: cover !important;
         border-radius: 6px !important;
-        margin-right: 10px !important;
+        margin-right: 12px !important;
     }
     .search-suggestion-name {
-        font-size: 12px !important;
+        font-size: 13px !important;
         font-weight: 500 !important;
         color: var(--text-main) !important;
     }
     .search-suggestion-price {
-        font-size: 11px !important;
+        font-size: 12px !important;
         color: var(--accent-pink) !important;
     }
     
-
     /* Подвал */
     .footer {
         margin-top: 20px !important;
