@@ -504,3 +504,105 @@ body {
         transform: translateX(100%);
     }
 }
+
+/* Адаптивность для маленьких телефонов */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+    
+    /* Шапка */
+    .header__logo {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    
+    .header__search-input {
+        width: 80px;
+        font-size: 11px;
+    }
+    
+    .header__search-input:focus {
+        width: 120px;
+    }
+    
+    .header__search-btn img,
+    .header__cart-icon img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Подвал */
+    .footer__follow h2 {
+        font-size: 22px;
+    }
+    
+    .footer__insta-grid {
+        gap: 10px;
+    }
+    
+    .footer__insta-grid img {
+        height: 80px;
+    }
+    
+    .footer__main {
+        padding: 30px 0 20px;
+    }
+    
+    .footer__col h4 {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    
+    .footer_icons img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .footer_icons span {
+        font-size: 12px;
+    }
+    
+    .footer__col li,
+    .footer__col a {
+        font-size: 12px;
+    }
+    
+    .footer__subscribe input {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .footer__subscribe button {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    
+    .footer__bottom {
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 10px;
+    }
+    
+    /* Уведомления */
+    .notification-container {
+        max-width: 280px;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .notification {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    .notification-cart-link {
+        font-size: 11px;
+    }
+}

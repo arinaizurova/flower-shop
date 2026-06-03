@@ -149,3 +149,93 @@
         width: 100%;
     }
 }
+
+/* Адаптивность для маленьких телефонов */
+@media (max-width: 576px) {
+    .cart-page {
+        padding: 30px 0;
+    }
+    
+    .cart-page__title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    /* Товары в корзине */
+    .cart-content {
+        border-radius: 16px;
+    }
+    
+    .cart-item {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .cart-item__img {
+        width: 60px;
+        height: 80px;
+        border-radius: 8px;
+    }
+    
+    .cart-item__name {
+        font-size: 14px;
+    }
+    
+    .cart-item__price {
+        font-size: 14px;
+    }
+    
+    .cart-item__remove {
+        font-size: 11px;
+    }
+    
+    /* Блок оформления */
+    .cart-summary {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .cart-total {
+        font-size: 18px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .order-form h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 12px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .btn-order-submit {
+        padding: 10px;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+    /* Пустая корзина */
+    .empty-cart {
+        padding: 40px 20px;
+    }
+    
+    .empty-cart i {
+        font-size: 40px;
+    }
+    
+    .empty-cart p {
+        font-size: 14px;
+    }
+}

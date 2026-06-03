@@ -220,3 +220,84 @@
         font-size: 32px;
     }
 }
+
+
+/* Адаптивность для маленьких телефонов */
+@media (max-width: 576px) {
+    .catalog-page {
+        padding: 20px 0 40px;
+    }
+    
+    .catalog-header {
+        margin-bottom: 30px;
+    }
+    
+    .catalog-header__title {
+        font-size: 28px;
+    }
+    
+    .catalog-header__subtitle {
+        font-size: 12px;
+    }
+    
+    /* Фильтры */
+    .filters {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .filters__group {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .filters__title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .filters__item {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .filters__range {
+        margin-top: 8px;
+    }
+    
+    .filters__btn-apply {
+        padding: 10px;
+        font-size: 11px;
+    }
+    
+    .filters__btn-reset {
+        font-size: 11px;
+        padding: 6px;
+    }
+    
+    /* Карточки товаров */
+    .catalog-grid {
+        gap: 20px;
+    }
+    
+    .product-card__img-wrapper {
+        height: 220px;
+    }
+    
+    .product-card__title {
+        font-size: 0.9rem;
+        margin: 12px 12px 5px;
+    }
+    
+    .product-card__price {
+        font-size: 1rem;
+        margin: 0 12px 12px;
+    }
+    
+    .product-card__btn {
+        margin: 0 12px 15px 12px;
+        padding: 8px 0;
+        font-size: 10px;
+        width: calc(100% - 24px);
+    }
+}
