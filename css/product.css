@@ -207,31 +207,59 @@
     font-size: 16px;
 }
 
-/* Адаптивность */
-@media (max-width: 1024px) {
+/* АДАПТИВ ДЛЯ ПЛАНШЕТА (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-view {
+        gap: 30px;
+    }
+    .product-view__title {
+        font-size: 36px;
+    }
     .product-recommendations__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
-@media (max-width: 768px) {
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНА (до 480px) */
+@media (max-width: 480px) {
+    .product-page {
+        padding: 20px 0 40px;
+    }
     .product-view {
-        flex-direction: column;
+        flex-direction: column !important;
+        gap: 20px !important;
     }
-    .product-view__gallery,
-    .product-view__info {
-        flex: 1 1 100%;
+    .product-view__title {
+        font-size: 24px !important;
     }
-    .product-view__main-img {
-        max-height: 400px;
+    .product-view__price {
+        font-size: 20px !important;
+    }
+    .product-view__description {
+        font-size: 13px !important;
+    }
+    .product-options__btn {
+        padding: 5px 12px !important;
+        font-size: 11px !important;
     }
     .product-purchase {
-        flex-direction: column;
+        flex-direction: column !important;
     }
-    .product-quantity {
-        align-self: flex-start;
+    .product-purchase__add {
+        padding: 10px !important;
+        font-size: 12px !important;
     }
     .product-recommendations__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .recommendation-card__img {
+        height: 160px !important;
+    }
+    .recommendation-card__title {
+        font-size: 12px !important;
+    }
+    .recommendation-card__price {
+        font-size: 13px !important;
     }
 }

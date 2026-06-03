@@ -280,45 +280,6 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     font-size: 15px;
 }
 
-/* Адаптивность */
-@media (max-width: 1024px) {
-    .categories__grid, .catalog-preview__grid, .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .hero__title {
-        font-size: 48px;
-    }
-    .container {
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .categories__grid, .catalog-preview__grid {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .hero {
-        height: 70vh;
-    }
-    .hero__title {
-        font-size: 36px;
-    }
-    .section-header__title {
-        font-size: 1.8rem;
-    }
-    .catalog-preview__grid {
-        margin-bottom: 40px;
-    }
-}
-
 /* Анимации */
 @keyframes fadeInUp {
     from {
@@ -340,3 +301,96 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     }
 }
 
+
+
+
+/* АДАПТИВ ДЛЯ ПЛАНШЕТА (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .categories__grid, .catalog-preview__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+    }
+    .hero__title {
+        font-size: 48px;
+    }
+}
+
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНА (до 480px) */
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh !important;
+    }
+    .hero__title {
+        font-size: 28px !important;
+    }
+    .hero__subtitle, .hero__promo {
+        font-size: 12px !important;
+    }
+    .btn {
+        padding: 6px 14px !important;
+        font-size: 11px !important;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .features__icon {
+        font-size: 22px !important;
+    }
+    .features__title {
+        font-size: 11px !important;
+    }
+    .features__description {
+        font-size: 9px !important;
+    }
+    .section-header__title {
+        font-size: 20px !important;
+    }
+    .section-header__subtitle {
+        font-size: 10px !important;
+    }
+    .categories {
+        margin-bottom: 20px !important;
+    }
+    .categories__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .categories__card {
+        padding: 10px 6px !important;
+    }
+    .categories__icon i {
+        font-size: 26px !important;
+    }
+    .categories__title {
+        font-size: 13px !important;
+    }
+    .catalog-preview__grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        margin-bottom: 15px !important;
+    }
+    .product-card__img-wrapper {
+        height: 160px !important;
+    }
+    .product-card__title {
+        font-size: 12px !important;
+    }
+    .product-card__price {
+        font-size: 13px !important;
+    }
+    .product-card__btn {
+        font-size: 10px !important;
+        padding: 5px 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    .quote-section {
+        margin-bottom: 5px !important;
+    }
+    .quote-text {
+        font-size: 14px !important;
+    }
+}
