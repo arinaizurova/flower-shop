@@ -510,119 +510,253 @@ body {
 
 
 
-
-/* ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ширина до 576px) */
+/* ТЕЛЕФОНЫ - МАКСИМАЛЬНОЕ УМЕНЬШЕНИЕ */
 @media (max-width: 576px) {
-    /* Шапка – только уменьшение шрифтов, без изменения структуры */
+    /* Общие */
+    .container {
+        padding: 0 8px !important;
+    }
+    body {
+        font-size: 11px !important;
+    }
+    .btn {
+        padding: 5px 12px !important;
+        font-size: 9px !important;
+    }
+    
+    /* Шапка - мельче */
     .header__logo {
-        font-size: 16px;
+        font-size: 14px !important;
+        letter-spacing: 1px !important;
     }
     .header__menu a {
-        font-size: 10px;
-        letter-spacing: 0.5px;
+        font-size: 9px !important;
+        letter-spacing: 0 !important;
     }
     .header__search-input {
-        width: 80px;
-        font-size: 10px;
+        width: 70px !important;
+        font-size: 9px !important;
+        padding: 4px 6px !important;
     }
-    .header__search-btn img,
-    .header__cart-icon img {
-        width: 16px;
-        height: 16px;
+    .header__search-btn img, .header__cart-icon img {
+        width: 14px !important;
+        height: 14px !important;
     }
-
-    /* Сетки: карточки товаров – 2 колонки */
-    .catalog-preview__grid,
-    .catalog-grid,
-    .product-recommendations__grid,
-    .categories__grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
+    .header__icons {
+        gap: 6px !important;
     }
-
-    /* Преимущества – 3 колонки (с мелким текстом) */
+    
+    /* Баннер */
+    .hero {
+        height: 40vh !important;
+    }
+    .hero__title {
+        font-size: 22px !important;
+        letter-spacing: 1px !important;
+    }
+    .hero__subtitle {
+        font-size: 11px !important;
+    }
+    .hero__promo {
+        font-size: 10px !important;
+    }
+    
+    /* Заголовки секций */
+    .section-header {
+        margin-bottom: 20px !important;
+    }
+    .section-header__title {
+        font-size: 18px !important;
+    }
+    .section-header__subtitle {
+        font-size: 8px !important;
+        letter-spacing: 1px !important;
+    }
+    .section-header__line {
+        width: 40px !important;
+        height: 1px !important;
+    }
+    
+    /* Преимущества - 3 колонки, очень мелко */
     .features-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
         padding: 20px 0 !important;
     }
+    .feature__item {
+        padding: 5px !important;
+    }
     .features__icon {
-        font-size: 22px !important;
-        margin-bottom: 5px !important;
+        font-size: 18px !important;
+        margin-bottom: 4px !important;
     }
     .features__title {
-        font-size: 10px !important;
+        font-size: 9px !important;
+        margin-bottom: 4px !important;
     }
     .features__description {
-        font-size: 8px !important;
+        font-size: 7px !important;
+        line-height: 1.2 !important;
     }
-
-    /* Подвал – 2 колонки */
+    
+    /* Категории - 2 колонки */
+    .categories__grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .categories__card {
+        padding: 12px 8px !important;
+    }
+    .categories__icon i {
+        font-size: 24px !important;
+    }
+    .categories__title {
+        font-size: 12px !important;
+        margin: 8px 0 4px !important;
+    }
+    .categories__description {
+        font-size: 9px !important;
+    }
+    
+    /* Карточки товаров - 2 колонки */
+    .catalog-preview__grid,
+    .catalog-grid,
+    .product-recommendations__grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .product-card__img-wrapper {
+        height: 120px !important;
+    }
+    .product-card__title {
+        font-size: 10px !important;
+        margin: 6px 6px 2px !important;
+    }
+    .product-card__price {
+        font-size: 11px !important;
+        margin: 0 6px 6px !important;
+    }
+    .product-card__btn {
+        font-size: 8px !important;
+        padding: 4px !important;
+        margin: 0 6px 8px 6px !important;
+        width: calc(100% - 12px) !important;
+    }
+    
+    /* Цитата */
+    .quote-section {
+        padding: 20px 0 !important;
+        margin: 20px 0 !important;
+    }
+    .quote-text {
+        font-size: 13px !important;
+    }
+    .quote-author {
+        font-size: 11px !important;
+    }
+    .quote-icon {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* Подвал - 2 колонки, мелко */
     .footer__grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
+        gap: 15px !important;
+        text-align: left !important;
+    }
+    .footer__col {
+        text-align: left !important;
+    }
+    .footer__col h4 {
+        font-size: 11px !important;
+        margin-bottom: 8px !important;
     }
     .footer_icons {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-bottom: 6px !important;
         justify-content: flex-start !important;
     }
-    .footer__insta-grid img {
-        height: 70px !important;
+    .footer_icons img {
+        width: 14px !important;
+        height: 14px !important;
     }
-
-    /* Ценности и команда для страницы "О нас" – 3 колонки */
+    .footer_icons span {
+        font-size: 10px !important;
+    }
+    .footer__col ul li, .footer__col a {
+        font-size: 10px !important;
+        margin-bottom: 6px !important;
+    }
+    .footer__subscribe {
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+    .footer__subscribe input {
+        padding: 4px 6px !important;
+        font-size: 10px !important;
+    }
+    .footer__subscribe button {
+        padding: 4px 8px !important;
+        font-size: 10px !important;
+    }
+    .footer__insta-grid {
+        gap: 6px !important;
+    }
+    .footer__insta-grid img {
+        height: 50px !important;
+    }
+    .footer__bottom {
+        font-size: 8px !important;
+        margin-top: 15px !important;
+        padding-top: 10px !important;
+    }
+    
+    /* Страница "О нас" - ценности и команда по 3 колонки */
     .values-grid,
     .team-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
     .value-card,
     .team-card {
-        padding: 10px !important;
+        padding: 8px 4px !important;
     }
     .value-card i {
-        font-size: 24px !important;
+        font-size: 20px !important;
+        margin-bottom: 6px !important;
     }
     .value-card h3,
     .team-card h3 {
-        font-size: 12px !important;
+        font-size: 10px !important;
+        margin-bottom: 4px !important;
     }
     .value-card p,
     .team-card p {
-        font-size: 9px !important;
+        font-size: 8px !important;
     }
     .team-card__img {
-        width: 70px !important;
-        height: 70px !important;
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 8px !important;
     }
-
-    /* Остальные элементы – только размеры, без изменения раскладки */
-    .hero {
-        height: 50vh;
+    .about-story__content h2 {
+        font-size: 18px !important;
     }
-    .hero__title {
-        font-size: 28px;
+    .about-story__content p {
+        font-size: 11px !important;
     }
-    .btn {
-        padding: 8px 20px;
-        font-size: 11px;
+    .stat-item span {
+        font-size: 20px !important;
     }
-    .section-header__title {
-        font-size: 22px;
-    }
-    .product-card__img-wrapper {
-        height: 160px;
-    }
-    .product-card__title {
-        font-size: 12px;
-    }
-    .product-card__price {
-        font-size: 13px;
-    }
-    .quote-text {
-        font-size: 14px;
+    .stat-item p {
+        font-size: 9px !important;
     }
 }
