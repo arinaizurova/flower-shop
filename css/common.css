@@ -551,46 +551,23 @@ body {
         gap: 6px !important;
     }
 
-        /* Подсказки поиска - поверх всего */
+    /* Подсказки поиска -  */
     .header__search-wrapper {
-        position: static !important;
+        position: relative !important;
     }
     .header__search-suggestions {
-        position: fixed !important;
-        top: 60px !important;
-        right: 12px !important;
+        position: absolute !important;
+        top: 40px !important;
+        right: 0 !important;
         left: auto !important;
         width: 280px !important;
         background: white !important;
         border: 1px solid var(--light-pink) !important;
         border-radius: 12px !important;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
         z-index: 9999 !important;
-        max-height: 300px !important;
+        max-height: 350px !important;
         overflow-y: auto !important;
-    }
-    .search-suggestion-item {
-        display: flex !important;
-        align-items: center !important;
-        padding: 10px !important;
-        text-decoration: none !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-    }
-    .search-suggestion-img {
-        width: 40px !important;
-        height: 40px !important;
-        object-fit: cover !important;
-        border-radius: 6px !important;
-        margin-right: 12px !important;
-    }
-    .search-suggestion-name {
-        font-size: 13px !important;
-        font-weight: 500 !important;
-        color: var(--text-main) !important;
-    }
-    .search-suggestion-price {
-        font-size: 12px !important;
-        color: var(--accent-pink) !important;
     }
     
     /* Подвал */

@@ -314,13 +314,27 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     }
 }
 
-
 /* Адаптив под телефон */
 @media (max-width: 480px) {
+    .hero {
+        margin-bottom: 25px !important;
+    }
+    .features {
+        margin-bottom: 25px !important;
+    }
+    .categories {
+        margin-bottom: 25px !important;
+    }
+    .catalog-preview {
+        margin-bottom: 25px !important;
+    }
+    .quote-section {
+        margin-bottom: 25px !important;
+    }
+    
     /* Баннер */
     .hero {
         height: 40vh !important;
-        margin-bottom: 20px !important;
     }
     .hero__title {
         font-size: 28px !important;
@@ -336,9 +350,8 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     /* Преимущества */
     .features-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
-        padding: 15px 0 !important;
-        margin-bottom: 20px !important;
+        gap: 12px !important;
+        padding: 0 !important;
     }
     .features__icon {
         font-size: 22px !important;
@@ -362,16 +375,13 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     }
     
     /* Категории */
-    .categories {
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-        padding: 0 !important;
-    }
     .categories__grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
         width: 100% !important;
-        padding: 0 8px !important;
         box-sizing: border-box !important;
     }
     .categories__card {
@@ -384,26 +394,21 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
         font-size: 12px !important;
     }
     
-    /* Бестселлеры */
-    .catalog-preview {
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-        padding: 0 !important;
-    }
+    /* Бестселлеры  */
     .catalog-preview__grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
         gap: 12px !important;
-        margin-bottom: 15px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
         width: 100% !important;
-        padding: 0 8px !important;
         box-sizing: border-box !important;
+        margin-bottom: 0 !important;
     }
     .product-card {
         width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
-        margin: 0 !important;
     }
     .product-card__img-wrapper {
         width: 100% !important;
@@ -415,12 +420,12 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     }
     .product-card__price {
         font-size: 13px !important;
-        margin: 0 10px 12px !important;
+        margin: 0 10px 10px !important;
     }
     .product-card__btn {
         font-size: 10px !important;
-        padding: 8px 0 !important;
-        margin: 0 10px 15px 10px !important;
+        padding: 6px 0 !important;
+        margin: 0 10px 12px 10px !important;
         width: calc(100% - 20px) !important;
         display: block !important;
         text-align: center !important;
@@ -428,8 +433,6 @@ h1, h2, h3, h4, .hero__title, .section-header__title, .categories__title {
     
     /* Цитата */
     .quote-section {
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
         padding: 15px 0 !important;
     }
     .quote-text {
