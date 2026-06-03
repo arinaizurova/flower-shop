@@ -1,6 +1,6 @@
 // component.js - для всего сайта
 
-// header - шапка для всего сайта (логотип, меню, поиск, корзина)
+// header - шапка для всего сайта
 const headerHTML = `
     <div class="header__wrapper">
         <nav class="header__nav container">
@@ -30,7 +30,7 @@ const headerHTML = `
     </div>
 `;
 
-// footer - подвал для всего сайта (контакты, меню, подписка)
+// footer - подвал для всего сайта
 const footerHTML = `
     <div class="footer__follow container">
         <h2>Жизнь в цветах</h2>
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (headerElement) headerElement.innerHTML = headerHTML;
     if (footerElement) footerElement.innerHTML = footerHTML;
 
-    // Кнопка меню - бургер кнопка
+    // Бургер-меню
     const burger = document.getElementById('burgerBtn');
     const menu = document.getElementById('headerMenu');
     if (burger && menu) {
@@ -108,32 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ========== ПОИСК ТОВАРА С ПОДСКАЗКАМИ ПОВЕРХ ВСЕГО ЭКРАНА ==========
+    // Поиск
     const searchInput = document.getElementById('headerSearchInput');
-    
-    // Создаем отдельный контейнер для подсказок в body (чтобы не зависеть от хедера)
-    let globalSuggestions = document.getElementById('globalSearchSuggestions');
-    if (!globalSuggestions) {
-        globalSuggestions = document.createElement('div');
-        globalSuggestions.id = 'globalSearchSuggestions';
-        globalSuggestions.className = 'global-search-suggestions';
-        document.body.appendChild(globalSuggestions);
-    }
+    let suggestionsBox = document.getElementById('headerSearchSuggestions');
 
     if (searchInput && typeof products !== 'undefined') {
         searchInput.addEventListener('input', (e) => {
             const value = e.target.value.toLowerCase().trim();
             if (value.length < 2) {
-                globalSuggestions.style.display = 'none';
+                if (suggestionsBox) suggestionsBox.style.display = 'none';
                 return;
             }
             const matches = products.filter(p => 
                 p.name.toLowerCase().includes(value) || 
                 (p.category && p.category.toLowerCase().includes(value))
             );
-            if (matches.length > 0) {
-                globalSuggestions.style.display = 'block';
-                globalSuggestions.innerHTML = matches.map(p => {
+            if (matches.length > 0 && suggestionsBox) {
+                suggestionsBox.style.display = 'block';
+                suggestionsBox.innerHTML = matches.map(p => {
                     const productId = products.findIndex(item => item.name === p.name);
                     return `
                         <a href="product.html?id=${productId}" class="search-suggestion-item">
@@ -145,45 +137,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         </a>
                     `;
                 }).join('');
-                
-                // Позиционируем подсказки относительно поля ввода
-                const rect = searchInput.getBoundingClientRect();
-                globalSuggestions.style.position = 'fixed';
-                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
-                globalSuggestions.style.left = rect.left + 'px';
-                globalSuggestions.style.width = rect.width + 'px';
-                globalSuggestions.style.minWidth = '260px';
             } else {
-                globalSuggestions.style.display = 'none';
+                if (suggestionsBox) suggestionsBox.style.display = 'none';
             }
         });
 
         document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !globalSuggestions.contains(e.target)) {
-                globalSuggestions.style.display = 'none';
-            }
-        });
-        
-        // Обновляем позицию при скролле
-        window.addEventListener('scroll', () => {
-            if (globalSuggestions.style.display === 'block') {
-                const rect = searchInput.getBoundingClientRect();
-                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
-                globalSuggestions.style.left = rect.left + 'px';
-            }
-        });
-        
-        // Обновляем позицию при изменении размера окна
-        window.addEventListener('resize', () => {
-            if (globalSuggestions.style.display === 'block') {
-                const rect = searchInput.getBoundingClientRect();
-                globalSuggestions.style.top = (rect.bottom + 5) + 'px';
-                globalSuggestions.style.left = rect.left + 'px';
+            if (suggestionsBox && !searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                suggestionsBox.style.display = 'none';
             }
         });
     }
 
-    // форма для подписки в подвале
+    // Форма подписки
     const subscribeForm = document.getElementById('subscribeForm');
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', (e) => {
