@@ -481,6 +481,45 @@ body {
     color: var(--accent-pink);
 }
 
+/* Глобальные подсказки поиска для телефона */
+.global-search-suggestions {
+    position: fixed;
+    background: white;
+    border: 1px solid var(--light-pink);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 999999;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+.global-search-suggestions .search-suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+}
+.global-search-suggestions .search-suggestion-item:last-child {
+    border-bottom: none;
+}
+.global-search-suggestions .search-suggestion-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 12px;
+}
+.global-search-suggestions .search-suggestion-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-main);
+}
+.global-search-suggestions .search-suggestion-price {
+    font-size: 12px;
+    color: var(--accent-pink);
+}
+
 /* Анимация появления уведомления */
 @keyframes slideInRight {
     from {
@@ -597,6 +636,27 @@ body {
     .search-suggestion-price {
         font-size: 12px !important;
         color: var(--accent-pink) !important;
+    }
+
+    
+    .global-search-suggestions {
+        width: calc(100% - 24px) !important;
+        left: 12px !important;
+        right: 12px !important;
+        top: 60px !important;
+    }
+    .global-search-suggestions .search-suggestion-item {
+        padding: 10px !important;
+    }
+    .global-search-suggestions .search-suggestion-img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .global-search-suggestions .search-suggestion-name {
+        font-size: 12px !important;
+    }
+    .global-search-suggestions .search-suggestion-price {
+        font-size: 11px !important;
     }
 
     /* Подвал */
