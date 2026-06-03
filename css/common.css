@@ -505,7 +505,6 @@ body {
     }
 }
 
-
 /* Адаптив под телефон */
 @media (max-width: 480px) {
     body, html, .page, .main-content, .container, .header__nav {
@@ -550,26 +549,56 @@ body {
         font-size: 10px !important;
         gap: 6px !important;
     }
+    .header__menu.active a {
+        font-size: 16px !important;
+    }
 
-    /* Подсказки поиска -  */
+    /* пдсказик поиска */
     .header__search-wrapper {
         position: relative !important;
     }
     .header__search-suggestions {
-        position: absolute !important;
-        top: 40px !important;
-        right: 0 !important;
+        position: fixed !important;
+        top: 55px !important;
+        right: 12px !important;
         left: auto !important;
         width: 280px !important;
         background: white !important;
         border: 1px solid var(--light-pink) !important;
         border-radius: 12px !important;
         box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
-        z-index: 9999 !important;
-        max-height: 350px !important;
+        z-index: 99999 !important;
+        max-height: 300px !important;
         overflow-y: auto !important;
+        display: none !important;
     }
-    
+    .header__search-suggestions.active {
+        display: block !important;
+    }
+    .search-suggestion-item {
+        display: flex !important;
+        align-items: center !important;
+        padding: 10px !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+    .search-suggestion-img {
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: cover !important;
+        border-radius: 6px !important;
+        margin-right: 12px !important;
+    }
+    .search-suggestion-name {
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: var(--text-main) !important;
+    }
+    .search-suggestion-price {
+        font-size: 12px !important;
+        color: var(--accent-pink) !important;
+    }
+
     /* Подвал */
     .footer {
         margin-top: 20px !important;
