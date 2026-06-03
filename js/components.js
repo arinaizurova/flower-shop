@@ -110,20 +110,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Поиск
     const searchInput = document.getElementById('headerSearchInput');
-    let suggestionsBox = document.getElementById('headerSearchSuggestions');
+    
+    // Функция для получения актуального контейнера подсказок 
+    function getSuggestionsBox() {
+        let box = document.getElementById('headerSearchSuggestions');
+        if (!box && searchInput) {
+            // Если контейнера нет, создаём его в родителе
+            const wrapper = searchInput.closest('.header__search-wrapper');
+            if (wrapper) {
+                box = document.createElement('div');
+                box.id = 'headerSearchSuggestions';
+                box.className = 'header__search-suggestions';
+                wrapper.appendChild(box);
+            }
+        }
+        return box;
+    }
 
     if (searchInput && typeof products !== 'undefined') {
-        searchInput.addEventListener('input', (e) => {
-            const value = e.target.value.toLowerCase().trim();
-            if (value.length < 2) {
-                if (suggestionsBox) suggestionsBox.style.display = 'none';
-                return;
-            }
+        // Функция показа подсказок
+        const showSuggestions = (value) => {
+            const suggestionsBox = getSuggestionsBox();
+            if (!suggestionsBox) return;
+            
             const matches = products.filter(p => 
                 p.name.toLowerCase().includes(value) || 
                 (p.category && p.category.toLowerCase().includes(value))
             );
-            if (matches.length > 0 && suggestionsBox) {
+            
+            if (matches.length > 0) {
                 suggestionsBox.style.display = 'block';
                 suggestionsBox.innerHTML = matches.map(p => {
                     const productId = products.findIndex(item => item.name === p.name);
@@ -138,14 +153,33 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 }).join('');
             } else {
-                if (suggestionsBox) suggestionsBox.style.display = 'none';
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            if (suggestionsBox && !searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
                 suggestionsBox.style.display = 'none';
             }
+        };
+
+        // Обработка ввода
+        searchInput.addEventListener('input', (e) => {
+            const value = e.target.value.toLowerCase().trim();
+            if (value.length < 2) {
+                const box = getSuggestionsBox();
+                if (box) box.style.display = 'none';
+                return;
+            }
+            showSuggestions(value);
+        });
+
+        // Закрытие при клике вне
+        document.addEventListener('click', (e) => {
+            const box = getSuggestionsBox();
+            if (box && !searchInput.contains(e.target) && !box.contains(e.target)) {
+                box.style.display = 'none';
+            }
+        });
+        
+        // Для телефона: при фокусе показываем подсказки, если есть текст
+        searchInput.addEventListener('focus', () => {
+            const value = searchInput.value.toLowerCase().trim();
+            if (value.length >= 2) showSuggestions(value);
         });
     }
 
