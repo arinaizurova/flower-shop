@@ -1,0 +1,123 @@
+/* orders.css – стили для страницы "Мои заказы" */
+
+.orders-page {
+    padding: 60px 0;
+    min-height: 70vh;
+}
+.orders-page__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-main);
+}
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.order-card {
+    background: var(--white);
+    border: 1px solid var(--light-pink);
+    border-radius: 20px;
+    padding: 20px 25px;
+    transition: box-shadow 0.2s;
+}
+.order-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+.order-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-pink);
+}
+.order-id {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--accent-pink);
+}
+.order-date {
+    font-size: 13px;
+    color: #aaa;
+}
+.order-status {
+    font-size: 13px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 30px;
+}
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.order-items {
+    flex: 2;
+}
+.order-items p {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.order-items ul {
+    list-style: none;
+    padding-left: 0;
+}
+.order-items li {
+    font-size: 14px;
+    padding: 4px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.order-customer {
+    flex: 1;
+    background: #fafafa;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+.order-customer p {
+    margin: 5px 0;
+}
+.order-total {
+    text-align: right;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--light-pink);
+    color: var(--accent-pink);
+}
+.empty-orders {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--light-pink);
+}
+.empty-orders i {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+.empty-orders .btn {
+    margin-top: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .order-details {
+        flex-direction: column;
+    }
+    .order-card__header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

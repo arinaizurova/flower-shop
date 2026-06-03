@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница товара — La Vie en Fleurs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/product.css">
+</head>
+<body class="page">
+    <header class="header"></header>
+
+    <main>
+        <div class="container product-view">
+            <!-- Левая колонка - фото -->
+            <div class="product-view__gallery">
+                <img src="" alt="Фото товара" class="product-view__main-img" id="productImage">
+            </div>
+
+            <!-- Правая колонка - информация -->
+            <div class="product-view__info">
+                <nav class="breadcrumb">
+                    <a href="index.html">Главная</a> / <a href="catalog.html">Каталог</a>
+                </nav>
+
+                <h1 class="product-view__title" id="productTitle">Загрузка...</h1>
+                <p class="product-view__price" id="productPrice">0 ₽</p>
+
+                <div class="product-view__description" id="productDesc">
+                    <p>Описание загружается...</p>
+                </div>
+
+                <div class="product-options">
+                    <h4 class="product-options__title">Выберите размер:</h4>
+                    <div class="product-options__list" id="sizeButtons">
+                        <button class="product-options__btn active" data-size="Стандарт" data-multiplier="1">Стандарт</button>
+                        <button class="product-options__btn" data-size="Премиум" data-multiplier="1.3">Премиум</button>
+                        <button class="product-options__btn" data-size="Делюкс" data-multiplier="1.6">Делюкс</button>
+                    </div>
+                </div>
+
+                <div class="product-purchase">
+                    <div class="product-quantity">
+                        <button class="product-quantity__btn" id="decrQty">-</button>
+                        <input type="number" id="quantityInput" value="1" min="1" class="product-quantity__input">
+                        <button class="product-quantity__btn" id="incrQty">+</button>
+                    </div>
+                    <button class="product-purchase__add btn" id="addToCartBtn">Добавить в корзину</button>
+                </div>
+
+                <div class="product-meta">
+                    <p><span>Артикул:</span> <span id="productSku">0000</span></p>
+                    <p><span>Категория:</span> <span id="productCategory"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок рекомендаций -->
+        <div class="product-recommendations container">
+            <h2 class="product-recommendations__title">Вам также может понравиться</h2>
+            <div class="product-recommendations__grid" id="recommendationsGrid"></div>
+        </div>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/notifications.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/components.js"></script>
+</body>
+</html>

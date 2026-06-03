@@ -1,0 +1,196 @@
+/* about.css – стили для страницы "О нас" */
+
+.about-page {
+    padding: 0;
+}
+
+/* Hero блок */
+.about-hero {
+    text-align: center;
+    background-color: var(--light-pink, #fdf4f5);
+    padding: 80px 0;
+    margin-bottom: 60px;
+}
+.about-hero__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+.about-hero__subtitle {
+    font-style: italic;
+    color: var(--light-text, #888);
+    font-size: 18px;
+}
+
+/* Блок история */
+.about-story {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+.about-story__image {
+    flex: 1;
+}
+.about-story__image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--light-pink);
+    transition: transform 0.3s;
+}
+
+.about-story__content {
+    flex: 1;
+}
+.about-story__content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+.about-story__content p {
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: var(--light-text, #666);
+    line-height: 1.6;
+}
+
+/* Секция ценностей */
+.about-values {
+    background-color: var(--light-pink, #fdf4f5);
+    padding: 70px 0;
+    margin-bottom: 60px;
+}
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--text-main);
+}
+.values-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.value-card {
+    flex: 1;
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 24px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.value-card i {
+    font-size: 48px;
+    color: var(--accent-pink);
+    margin-bottom: 20px;
+}
+.value-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.value-card p {
+    color: var(--light-text);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Команда */
+.about-team {
+    margin-bottom: 80px;
+}
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.team-card {
+    text-align: center;
+    width: 240px;
+}
+.team-card__img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.team-card__img:hover {
+    transform: scale(1.05);
+}
+.team-card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.team-card p {
+    color: var(--accent-pink);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Статистика */
+.about-stats {
+    background: #2c2c2c;
+    color: white;
+    padding: 60px 0;
+    margin-bottom: 0;
+}
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.stat-item span {
+    display: block;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--accent-pink);
+}
+.stat-item p {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .about-story {
+        flex-direction: column;
+    }
+    .about-story__image img {
+        max-width: 100%;
+    }
+    .values-grid {
+        flex-direction: column;
+    }
+    .team-grid {
+        gap: 30px;
+    }
+    .stats-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .about-hero__title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+}
